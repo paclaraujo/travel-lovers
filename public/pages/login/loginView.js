@@ -9,9 +9,9 @@ export const loginTemplate = () => {
         <div class='bg-white login-box container-shadow'>
           <h1 class='title'>TraveLovers</h1>
           <form class='login-form'>
-            <label>Email:</label>
+            <label for='email'>Email:</label>
             <input class='login-input' placeholder='example@example.com' id='email' type='email'>
-            <label >Password:</label>
+            <label for='password'>Password:</label>
             <input class='login-input' placeholder='***********' id='password' type='password'>
             <span class='error' id='error-message'></span>
           </form>
