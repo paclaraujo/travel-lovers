@@ -1,17 +1,19 @@
+import { addEvents } from './loginEvents.js';
+
 export const loginTemplate = () => {
   const loginContainer = document.createElement('div');
 
   loginContainer.innerHTML = `
     <main class='login-container'>
-      <div class='login container-shadow'>
-        <div class='bg-white login-box'>
+      <div class='login'>
+        <div class='bg-white login-box container-shadow'>
           <h1 class='title'>TraveLovers</h1>
           <form class='login-form'>
             <label>Email:</label>
             <input class='login-input' placeholder='example@example.com' id='email' type='email'>
             <label >Password:</label>
             <input class='login-input' placeholder='***********' id='password' type='password'>
-            <span class='error-message'></span>
+            <span class='error' id='error-message'></span>
           </form>
           <div class='btn-box'>
             <button class='btn container-shadow' id='login-btn'>Login</button>
@@ -21,7 +23,10 @@ export const loginTemplate = () => {
           </div>
         </div>
       </div>
-    </main>`;
+    </main>
+  `;
+
+  addEvents(loginContainer);
 
   return loginContainer;
 };
