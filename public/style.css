@@ -15,7 +15,7 @@
 
 /* login page */
 
-.login-container {
+.login-container, .register-container {
   background-attachment: scroll;
   background-image: url('./assets/login.png');
   background-repeat: no-repeat;
@@ -27,11 +27,11 @@
   background-color: white;
 }
 
-.login, .login-box, .login-form, .btn-box {
+.login, .login-box, .login-form, .btn-box, .register, .register-box, .register-form {
   display: flex;
 }
 
-.login {
+.login, .register {
   align-items: flex-end;
   height: 90vh;
 }
@@ -42,21 +42,21 @@
 	-webkit-box-shadow: 4px 8px 6px -5px #777;
 }
 
-.login-box, .login-form, .btn-box {
+.login-box, .login-form, .btn-box, .register-box, .register-form {
   flex-direction: column;
 }
 
-.login, .login-box {
+.login, .login-box, .register, .register-box {
   justify-content: center;
 }
 
-.login-box {
+.login-box, .register-box {
   height: 63vh;
   width: 85vw;
   padding: 10vw;
 }
 
-.title, .fab, .register-anchor {
+.title, .fab, .register-anchor, .login-anchor {
   color: #6E3799;
 }
 
@@ -65,19 +65,19 @@
   margin-bottom: 4vh;
 }
 
-.login-input, .btn, .text, .google-btn, .error  {
+.login-input, .btn, .text, .google-btn, .error, .register-input {
   margin-bottom: 2vh;
 }
 
-.login-form {
+.login-form, .register-form {
   width: 95%;
 }
 
-.login-form label {
+.login-form label, .register-form label {
   margin-bottom: 1vh;
 }
 
-.login-input {
+.login-input, .register-input {
   border: none;
   border-bottom: 1px solid #6E3799;
   height: 4vh;
@@ -125,16 +125,27 @@
 }
 
 @media screen and (min-width: 600px) {
-  .login {
+  .login, .register {
     align-items: center;
     justify-content: flex-end;
     width: 90vw;
     height: 100vh;
   }
 
-  .login-box {
-    width: 40vw;
-    height: 75vh;
+  .login-box, .register-box {
     padding: 5vw;
+    width: 40vw;
+  }
+
+  .login-box {
+    height: 75vh;
+  }
+
+  .register-box {
+    height: 60vh;
+  }
+
+  .register-btn {
+    width: 12vw;
   }
 }
