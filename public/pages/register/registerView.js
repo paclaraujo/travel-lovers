@@ -1,3 +1,5 @@
+import { addRegisterEvent } from './registerEvents.js';
+
 export const registerTemplate = () => {
   const registerContainer = document.createElement('div');
 
@@ -24,6 +26,7 @@ export const registerTemplate = () => {
     </main>
   `;
 
+  addRegisterEvent(registerContainer);
 
   return registerContainer;
 };
