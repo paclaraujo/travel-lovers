@@ -1,0 +1,119 @@
+/* azulzinho -#6ECAD7 */
+/* rosinha - #EF7F9B */
+/* amarelinho - #FFC512 */
+/*roxinho- #6E3799 */
+
+@font-face {
+  font-family: 'TypeWriter';
+  src: url('./font/typewriter-3.otf');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'TypeWriter';
+}
+
+/* login page */
+
+.login-container {
+  background-attachment: scroll;
+  background-image: url('./assets/login.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.login, .login-box, .login-form, .btn-box {
+  display: flex;
+}
+
+.login {
+  align-items: flex-end;
+  height: 90vh;
+}
+
+.container-shadow {
+	box-shadow: 4px 8px 6px -5px #777;
+	-moz-box-shadow: 4px 8px 6px -5px #777;
+	-webkit-box-shadow: 4px 8px 6px -5px #777;
+}
+
+.login-box, .login-form, .btn-box {
+  flex-direction: column;
+}
+
+.login, .login-box {
+  justify-content: center;
+}
+
+.login-box {
+  height: 63vh;
+  width: 85vw;
+  padding: 10vw;
+}
+
+.title, .fab, .register-anchor {
+  color: #6E3799;
+}
+
+.title {
+  font-size: 35px;
+  margin-bottom: 4vh;
+}
+
+.login-input, .btn, .text, .google-btn  {
+  margin-bottom: 2vh;
+}
+
+.login-form {
+  width: 95%;
+}
+
+.login-form label {
+  margin-bottom: 1vh;
+}
+
+.login-input {
+  border: none;
+  border-bottom: 1px solid #6E3799;
+  height: 4vh;
+  font-size: 14px;
+}
+
+.btn-box {
+  align-items: center;
+}
+
+.btn {
+  background-color: #6E3799;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 15px;
+  height: 5vh;
+  width: 25vw;
+}
+
+.btn:hover, .google-btn:hover {
+  background-color: rgb(130, 91, 160);
+  cursor: pointer;
+}
+
+.google-btn {
+  border: 2px solid #6E3799;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.fab {
+  font-size: 20px;
+}
+
+.text {
+  text-align: center;
+}
