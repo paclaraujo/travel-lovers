@@ -65,7 +65,7 @@
   margin-bottom: 4vh;
 }
 
-.login-input, .btn, .text, .google-btn  {
+.login-input, .btn, .text, .google-btn, .error  {
   margin-bottom: 2vh;
 }
 
@@ -84,6 +84,12 @@
   font-size: 14px;
 }
 
+.error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
 .btn-box {
   align-items: center;
 }
@@ -99,7 +105,7 @@
 }
 
 .btn:hover, .google-btn:hover {
-  background-color: rgb(130, 91, 160);
+  background-color: rgb(186, 157, 207);
   cursor: pointer;
 }
 
@@ -116,4 +122,19 @@
 
 .text {
   text-align: center;
+}
+
+@media screen and (min-height: 600px) {
+  .login {
+    align-items: center;
+    justify-content: end;
+    width: 90vw;
+    height: 100vh;
+  }
+
+  .login-box {
+    width: 40vw;
+    height: 75vh;
+    padding: 5vw;
+  }
 }
