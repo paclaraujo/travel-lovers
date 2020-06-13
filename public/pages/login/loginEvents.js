@@ -1,32 +1,33 @@
 import { loginWithEmailAndPassword , loginWithGoogle } from './loginFunctions.js';
-import { errorMessages } from '../../utils/error.js';
+import { showErrorMessage } from '../../utils/commonScripts.js';
 
-const showErrorMessage = (error) => {
-  const errorMessage = document.querySelector('#error-message');
-  errorMessage.textContent = errorMessages.auth[error]; 
+const eventsParams = (loginContainer) => {
+  return {
+    email: loginContainer.querySelector('#email').value,
+    password: loginContainer.querySelector('#password').value
+  }
 }
 
-const loginEvent = (btn, email, password) => {
-  btn.addEventListener('click', (event) => {
+const loginEvent = (loginContainer) => {
+  const loginBtn = loginContainer.querySelector('#login-btn');
+
+  loginBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    loginWithEmailAndPassword(email.value, password.value, showErrorMessage)
+    loginWithEmailAndPassword(eventsParams(loginContainer), showErrorMessage)
   })
 }
 
-const googleLoginEvent = (btn) => {
-  btn.addEventListener('click', (event) => {
+const googleLoginEvent = (loginContainer) => {
+  const googleBtn = loginContainer.querySelector('#login-google');
+
+  googleBtn.addEventListener('click', (event) => {
     event.preventDefault();
     loginWithGoogle(showErrorMessage);
   })
 }
 
 export const addEvents = (loginContainer) => {
-  const email = loginContainer.querySelector('#email'); 
-  const password = loginContainer.querySelector('#password'); 
-  const loginBtn = loginContainer.querySelector('#login-btn'); 
-  const googleBtn = loginContainer.querySelector('#login-google');
-  
-  loginEvent(loginBtn, email, password);
-  googleLoginEvent(googleBtn);
+  loginEvent(loginContainer);
+  googleLoginEvent(loginContainer);
 }
 
