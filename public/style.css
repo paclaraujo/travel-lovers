@@ -16,18 +16,21 @@
 /* login page */
 
 .login-container, .register-container {
-  background-attachment: scroll;
   background-image: url('./assets/login.png');
+  height: 100vh;
+}
+
+.login-container, .register-container, .feed-container {
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
 }
 
 .bg-white {
   background-color: white;
 }
 
-.login, .login-box, .login-form, .btn-box, .register, .register-box, .register-form {
+.login, .login-box, .login-form, .btn-box, .register, .register-box, .register-form, .navbar, .navbar-ul, .container,.post-text, .feed-form, .posts-options, .post-container, .profile-container, .profile-info, .post-actions, .likes-container, .comment-container, footer {
   display: flex;
 }
 
@@ -42,11 +45,11 @@
 	-webkit-box-shadow: 4px 8px 6px -5px #777;
 }
 
-.login-box, .login-form, .btn-box, .register-box, .register-form {
+.login-box, .login-form, .btn-box, .register-box, .register-form, .container, .feed-form, .post-container {
   flex-direction: column;
 }
 
-.login, .login-box, .register, .register-box {
+.login, .login-box, .register, .register-box, .navbar, .feed-form, .post-container, .profile-container, footer {
   justify-content: center;
 }
 
@@ -56,7 +59,7 @@
   padding: 10vw;
 }
 
-.title, .fab, .register-anchor, .login-anchor {
+.title, .fab, .register-anchor, .login-anchor, .privacy-checkbox-label {
   color: #6E3799;
 }
 
@@ -65,7 +68,7 @@
   margin-bottom: 4vh;
 }
 
-.login-input, .btn, .text, .google-btn, .error, .register-input {
+.login-input, .btn, .text, .google-btn, .error, .register-input, .post-container {
   margin-bottom: 2vh;
 }
 
@@ -73,7 +76,7 @@
   width: 95%;
 }
 
-.login-form label, .register-form label {
+.login-form label, .register-form label, .feed-form {
   margin-bottom: 1vh;
 }
 
@@ -90,7 +93,7 @@
   text-align: center;
 }
 
-.btn-box {
+.btn-box, .navbar-ul, .feed-form, .posts-options, .profile-info, .container, .post-container, .post-actions, .likes-container, .post-text, .comment-container, footer {
   align-items: center;
 }
 
@@ -124,7 +127,181 @@
   text-align: center;
 }
 
-@media screen and (min-width: 600px) {
+/* feed style */
+
+.feed-container {
+  background-image: url('./assets/feed.png');
+}
+
+.navbar, footer {
+  background-color: #6E3799;
+}
+
+.navbar-ul {
+  width: 90vw;
+  height: 7vh;
+  justify-content: space-between;
+}
+
+.navbar-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: white;
+}
+
+.navbar-icon {
+  margin-right: 1vh;
+}
+
+.container {
+  min-height: 86vh;
+}
+
+.feed-form, .post-container {
+  background-color: #F6F6F6;
+  margin-top: 2vh;
+  width: 80vw;
+}
+
+.feed-form {
+  height: 20vh;
+}
+
+.post-container {
+  min-height: 20vh;
+}
+
+.post-textarea, .posts-options, .post-actions {
+  width: 70vw;
+}
+
+.post-textarea {
+  height: 9vh;
+  resize: none;
+  padding: 4px 8px;
+  border: 1px solid rgb(165, 163, 163);
+}
+
+.posts-options {
+  height: 6vh;
+}
+
+.post-actions, .posts-options, .comment-container {
+  justify-content: space-between;
+}
+
+.action-btn {
+  color: #6E3799;
+  font-size: 16px;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+
+}
+
+.like {
+  padding-right: 2vw ;
+}
+
+.mg {
+  margin-left: 3vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.posts-options select {
+  color: #6E3799;
+  height: 4vh;
+  width: 25vw;
+}
+
+.feed-btn {
+  height: 4vh;
+  border: none;
+  background-color: #6E3799;
+  color: white;
+  border-radius: 20px;
+  width: 30vw;
+  font-size: 15px;
+}
+
+.profile-container {
+  margin-top: 2vh;
+  background-color: #F6F6F6;
+  width: 80vw;
+}
+
+.division {
+  border-bottom: 1px solid rgb(165, 163, 163);
+}
+
+.post-text {
+  width: 70vw;
+  min-height: 6vh;
+  font-size: 18px;
+}
+
+.post-actions {
+  height: 5vh;
+}
+
+.comments-textarea {
+  border: 1px solid rgb(165, 163, 163);
+  border-radius: 10px;
+  height: 4vh;
+  width: 60vw;
+  resize: none;
+  padding: 2px 8px;
+}
+
+.profile-info {
+  height: 9vh;
+  width: 70vw;
+  background-color: #F6F6F6;
+  justify-content: flex-start;
+}
+
+.profile-img {
+  height: 8vh;
+  width: 8vh;
+}
+
+.user-name {
+  font-size: 20px;
+  color: #6E3799;
+}
+
+.user-description, .post-privacy {
+  color:#777;
+}
+
+.user-description {
+  font-size: 12px;
+}
+
+.post-privacy {
+  font-size: 11px;
+}
+
+.posts-likes {
+  color: #777;
+  font-size: 15px;
+}
+
+.comment-container {
+  height: 7vh;
+  width: 70vw;
+}
+
+footer {
+  color: white;
+  height: 7vh;
+}
+
+@media screen and (min-width: 1024px) {
   .login, .register {
     align-items: center;
     justify-content: flex-end;
@@ -147,5 +324,32 @@
 
   .register-btn {
     width: 12vw;
+  }
+
+  .post-textarea, .posts-options, .post-actions, .post-text, .profile-info, .comment-container {
+    width: 35vw;
+  }
+
+  .feed-form, .post-container, .profile-container {
+    width: 45vw;
+  }
+
+  .comments-textarea {
+    width: 30vw;
+    padding: 5px 8px;
+  }
+
+  .feed-btn {
+    width: 10vw;
+  }
+
+  .feed-container {
+    background-image: url('./assets/web.png');
+  }
+
+  .navbar {
+    box-shadow: 4px 8px 6px -5px #777;
+	  -moz-box-shadow: 4px 8px 6px -5px #777;
+	  -webkit-box-shadow: 4px 8px 6px -5px #777;
   }
 }
