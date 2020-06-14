@@ -4,12 +4,15 @@ export const registerNewUser = ({ name, email, password }, callback) => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then((response) => {
+    .then(({ user }) => {
+      const updatedUser = {
+        ...user,
+        displayName: name
+      }
       setDisplayName(name)
-        addUserDoc(response.user)
-        location.hash = '#feed';
+      addUserDoc(updatedUser);
     })
-    .catch(error => callback(error.code, 'register'))
+    .catch(error => callback(error))
 }
 
 export const setDisplayName = (name) => (

@@ -1,7 +1,7 @@
 import { registerNewUser } from './registerFunctions.js';
-import { showErrorMessage } from '../../utils/commonScripts.js';
+import { showErrorMessage } from '../../utils/error.js';
 
-const eventParams = (registerContainer) => {
+const user = (registerContainer) => {
   return {
     name: registerContainer.querySelector('#name').value,
     email: registerContainer.querySelector('#email').value,
@@ -14,6 +14,6 @@ export const addRegisterEvent = (registerContainer) => {
 
   registerBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    registerNewUser(eventParams(registerContainer), showErrorMessage)
+    registerNewUser(user(registerContainer), showErrorMessage)
   })
 }
