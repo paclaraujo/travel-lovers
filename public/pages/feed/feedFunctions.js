@@ -14,7 +14,7 @@ export const logout = () => {
     .catch(error => (error));
 }
 
-const dateFormat = () => {
+export const dateFormat = () => {
   const options = {year: 'numeric', month: "long", day: "numeric", hour: 'numeric', minute: "numeric"};
   return new Intl.DateTimeFormat('en', options).format(new Date())
 } 
