@@ -1,7 +1,7 @@
 import { loginWithEmailAndPassword , loginWithGoogle } from './loginFunctions.js';
-import { showErrorMessage } from '../../utils/commonScripts.js';
+import { showErrorMessage } from '../../utils/error.js';
 
-const eventsParams = (loginContainer) => {
+const user = (loginContainer) => {
   return {
     email: loginContainer.querySelector('#email').value,
     password: loginContainer.querySelector('#password').value
@@ -13,7 +13,7 @@ const loginEvent = (loginContainer) => {
 
   loginBtn.addEventListener('click', (event) => {
     event.preventDefault();
-    loginWithEmailAndPassword(eventsParams(loginContainer), showErrorMessage)
+    loginWithEmailAndPassword(user(loginContainer), showErrorMessage)
   })
 }
 

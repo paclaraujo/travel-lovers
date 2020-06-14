@@ -2,7 +2,7 @@ import { addEvents } from './loginEvents.js';
 
 export const loginTemplate = () => {
   const loginContainer = document.createElement('div');
-
+  
   loginContainer.innerHTML = `
     <main class='login-container'>
       <div class='login'>

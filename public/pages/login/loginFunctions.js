@@ -4,8 +4,8 @@ export const loginWithEmailAndPassword = ({ email, password }, callback) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .then(() => location.hash='feed')
-    .catch((error) => callback(error.code, 'auth'));
+    .then(() => location.hash = 'feed')
+    .catch((error) => callback(error));
 };
 
 export const loginWithGoogle = (callback) => {
@@ -13,9 +13,6 @@ export const loginWithGoogle = (callback) => {
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then((result) => {
-      location.hash = 'feed';
-      addUserDoc(result.user)
-    })
-    .catch((error) => callback(error.code))
+    .then((result) => addUserDoc(result.user))
+    .catch((error) => callback(error))
 };
